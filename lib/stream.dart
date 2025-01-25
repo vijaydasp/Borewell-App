@@ -29,13 +29,13 @@ class _MapviewState extends State<Mapview> {
         },
       ),
     )
-    ..loadRequest(Uri.parse(baseUrl));
+    ..loadRequest(Uri.parse(baseUrl_stream));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ESP32 Cam',
+        title: const Text('Camera View',
             style: TextStyle(fontWeight: FontWeight.bold)),
         backgroundColor: Colors.blueAccent,
         centerTitle: true,
@@ -61,7 +61,7 @@ class _MapviewState extends State<Mapview> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: RotatedBox(
-                quarterTurns: 2,
+                quarterTurns: 0,
                 child: WebViewWidget(controller: controller),
               ),
             ),
